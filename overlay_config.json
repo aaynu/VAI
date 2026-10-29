@@ -1,0 +1,154 @@
+{
+  "active_preset_index": 0,
+  "monitor_index": 0,
+  "reticle_opacity": 0.88,
+  "agent_box_size_px": 54,
+  "role_box_size_px": 36,
+  "lock_in_radius_px": 24,
+  "presets": [
+    {
+      "name": "Jett (Duelist)",
+      "use_role_filter": true,
+      "aspect_profiles": {
+        "16:9": {
+          "role_uv": [
+            0.0885,
+            0.195
+          ],
+          "agent_uv": [
+            0.118,
+            0.305
+          ],
+          "lock_uv": [
+            0.5,
+            0.815
+          ]
+        },
+        "16:10": {
+          "role_uv": [
+            0.0885,
+            0.195
+          ],
+          "agent_uv": [
+            0.118,
+            0.305
+          ],
+          "lock_uv": [
+            0.5,
+            0.815
+          ]
+        },
+        "other": {
+          "role_uv": [
+            0.0885,
+            0.195
+          ],
+          "agent_uv": [
+            0.118,
+            0.305
+          ],
+          "lock_uv": [
+            0.5,
+            0.815
+          ]
+        }
+      }
+    },
+    {
+      "name": "Clove (Controller)",
+      "use_role_filter": true,
+      "aspect_profiles": {
+        "16:9": {
+          "role_uv": [
+            0.145,
+            0.195
+          ],
+          "agent_uv": [
+            0.172,
+            0.305
+          ],
+          "lock_uv": [
+            0.5,
+            0.815
+          ]
+        },
+        "16:10": {
+          "role_uv": [
+            0.145,
+            0.195
+          ],
+          "agent_uv": [
+            0.172,
+            0.305
+          ],
+          "lock_uv": [
+            0.5,
+            0.815
+          ]
+        },
+        "other": {
+          "role_uv": [
+            0.145,
+            0.195
+          ],
+          "agent_uv": [
+            0.172,
+            0.305
+          ],
+          "lock_uv": [
+            0.5,
+            0.815
+          ]
+        }
+      }
+    },
+    {
+      "name": "Reyna (Duelist)",
+      "use_role_filter": true,
+      "aspect_profiles": {
+        "16:9": {
+          "role_uv": [
+            0.0885,
+            0.195
+          ],
+          "agent_uv": [
+            0.172,
+            0.395
+          ],
+          "lock_uv": [
+            0.5,
+            0.815
+          ]
+        },
+        "16:10": {
+          "role_uv": [
+            0.0885,
+            0.195
+          ],
+          "agent_uv": [
+            0.172,
+            0.395
+          ],
+          "lock_uv": [
+            0.5,
+            0.815
+          ]
+        },
+        "other": {
+          "role_uv": [
+            0.0885,
+            0.195
+          ],
+          "agent_uv": [
+            0.172,
+            0.395
+          ],
+          "lock_uv": [
+            0.5,
+            0.815
+          ]
+        }
+      }
+    }
+  ]
+}
