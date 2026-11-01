@@ -10,6 +10,7 @@ on:
         description: "Release tag (e.g. v1.0.0)"
         required: true
         default: "v1.0.0"
+        type: string
 
 jobs:
   build-and-release:
@@ -104,37 +105,37 @@ jobs:
           $ver = "${{ steps.version_info.outputs.version }}"
           $badge = "${{ steps.release_info.outputs.badge }}"
           
-          $notes = @"
-$badge
-
-### 🎮 VAI - Valorant Agent Instalock Helper v$ver
-
-A lightweight, passive visual overlay designed to give you instant mouse pre-positioning on Agent Select without triggering Riot Vanguard.
-
-#### 📥 Easy Installation (Non-Technical Users)
-1. Download **`VAI-Setup-v$ver.exe`** from the Assets below.
-2. Run the installer and click **Next** -> **Install**.
-3. Launch **VAI** from your Desktop or Start Menu!
-
-*(Alternative: Download the standalone **`VAI.exe`** for a portable zero-install experience!)*
-
----
-
-#### ⌨️ Default Hotkeys
-- **`Ctrl + Shift + F8`**: Toggle overlay visibility (completely detaches from Windows DWM during gameplay for zero input lag).
-- **`Ctrl + Shift + F9`**: Toggle Calibration Mode (drag reticles or nudge with Arrow keys).
-- **`Ctrl + Shift + F10`**: Cycle configured Agent presets (Jett, Clove, Reyna, etc.).
-- **`Ctrl + Shift + F7`**: Cycle target monitor (multi-monitor setups).
-- **`Ctrl + Shift + R`**: Toggle Role Filter waypoint.
-- **`Ctrl + Shift + Q`**: Clean exit.
-
-#### 🛡️ Anti-Cheat & Vanguard Safety
-- **0% Memory Injection / 0% Hooking / 0% Automation**
-- Uses standard Windows DWM transparent overlay rendering (`WS_EX_TRANSPARENT | WS_EX_LAYERED`).
-- All clicks and movements remain 100% human input.
-"@
+          $lines = @(
+            "$badge",
+            "",
+            "### 🎮 VAI - Valorant Agent Instalock Helper v$ver",
+            "",
+            "A lightweight, passive visual overlay designed to give you instant mouse pre-positioning on Agent Select without triggering Riot Vanguard.",
+            "",
+            "#### 📥 Easy Installation (Non-Technical Users)",
+            "1. Download **``VAI-Setup-v$ver.exe``** from the Assets below.",
+            "2. Run the installer and click **Next** -> **Install**.",
+            "3. Launch **VAI** from your Desktop or Start Menu!",
+            "",
+            "*(Alternative: Download the standalone **``VAI.exe``** for a portable zero-install experience!)*",
+            "",
+            "---",
+            "",
+            "#### ⌨️ Default Hotkeys",
+            "- **``Ctrl + Shift + F8``**: Toggle overlay visibility (completely detaches from Windows DWM during gameplay for zero input lag).",
+            "- **``Ctrl + Shift + F9``**: Toggle Calibration Mode (drag reticles or nudge with Arrow keys).",
+            "- **``Ctrl + Shift + F10``**: Cycle configured Agent presets (Jett, Clove, Reyna, etc.).",
+            "- **``Ctrl + Shift + F7``**: Cycle target monitor (multi-monitor setups).",
+            "- **``Ctrl + Shift + R``**: Toggle Role Filter waypoint.",
+            "- **``Ctrl + Shift + Q``**: Clean exit.",
+            "",
+            "#### 🛡️ Anti-Cheat & Vanguard Safety",
+            "- **0% Memory Injection / 0% Hooking / 0% Automation**",
+            "- Uses standard Windows DWM transparent overlay rendering (``WS_EX_TRANSPARENT | WS_EX_LAYERED``).",
+            "- All clicks and movements remain 100% human input."
+          )
           
-          Set-Content -Path release_notes.md -Value $notes -Encoding utf8
+          Set-Content -Path release_notes.md -Value ($lines -join "`r`n") -Encoding utf8
 
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
